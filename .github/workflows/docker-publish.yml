@@ -41,7 +41,7 @@ jobs:
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
           registry: ${{ env.REGISTRY }}
-          username: naoya9922
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
 
@@ -54,7 +54,7 @@ jobs:
           context: ./image-updater/source-code
           file: ./image-updater/source-code/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ inputs.docker_tag }}
+          tags: ghcr.io/naoya9922/gitops-cert-level-2-examples:${{ inputs.docker_tag }}
 
 
 
